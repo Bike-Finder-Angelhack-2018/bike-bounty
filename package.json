@@ -4,7 +4,8 @@
   "description": "## This is a repo to try and test [agora.io's tutorial on video chat](https://github.com/AgoraIO/Agora-Web-Tutorial-1to1#create-the-client)",
   "main": "AgoraRTCSDK-2.3.1.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "echo \"Error: no test specified\" "
   },
   "repository": {
     "type": "git",
