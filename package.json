@@ -1,0 +1,19 @@
+{
+  "name": "web_video_chat",
+  "version": "1.0.0",
+  "description": "## This is a repo to try and test [agora.io's tutorial on video chat](https://github.com/AgoraIO/Agora-Web-Tutorial-1to1#create-the-client)",
+  "main": "AgoraRTCSDK-2.3.1.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com-calebjay:Bike-Finder-Angelhack-2018/web_video_chat.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "aws-amplify": "^1.0.4"
+  }
+}
