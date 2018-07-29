@@ -259,6 +259,8 @@
     function leave() {
       document.getElementById("leave").disabled = true;
       $('#leave').hide();
+        $('div#video').hide();
+      $('#map').show();
       $('#join').show();
       client.leave(function () {
         console.log("Leavel channel successfully");
