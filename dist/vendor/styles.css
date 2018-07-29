@@ -4,10 +4,13 @@
 
 body {
     height: 100%;
+    color: white;
+    background: linear-gradient( #5E5E5E, #040404);
 }
 
 html {
     height: 100%;
+
 }
 
 .container {
@@ -21,5 +24,9 @@ html {
 }
 
 .join-leave {
-    margin-top: 10px
+    margin-top: 10px;l
+}
+
+.btn-primary {
+    background-color: #E66A7E;
 }
