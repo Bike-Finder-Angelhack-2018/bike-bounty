@@ -198,10 +198,15 @@
         client.join(channel_key, channel.value, null, function (uid) {
           console.log("User " + uid + " join channel successfully");
           if ($('#videocheckbox')[0].checked) {
-            console.log('videocheckbox checked')
             camera = videoSource.value;
             microphone = audioSource.value;
-            localStream = AgoraRTC.createStream({ streamID: uid, audio: true, cameraId: camera, microphoneId: microphone, video: document.getElementById("video").checked, screen: false });
+            localStream = AgoraRTC.createStream({ 
+              streamID: uid, 
+              audio: true, 
+              cameraId: camera, 
+              microphoneId: microphone, 
+              video: $('#videocheckbox')[0].checked, 
+              screen: false });
             //localStream = AgoraRTC.createStream({streamID: uid, audio: false, cameraId: camera, microphoneId: microphone, video: false, screen: true, extensionId: 'minllpmhdgpndnkomcoccfekfegnlikg'});
             localStream.setVideoProfile('720p_3');
 
