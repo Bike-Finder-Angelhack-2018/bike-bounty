@@ -198,6 +198,7 @@
         client.join(channel_key, channel.value, null, function (uid) {
           console.log("User " + uid + " join channel successfully");
           if ($('#videocheckbox')[0].checked) {
+            console.log('videocheckbox checked')
             camera = videoSource.value;
             microphone = audioSource.value;
             localStream = AgoraRTC.createStream({ streamID: uid, audio: true, cameraId: camera, microphoneId: microphone, video: document.getElementById("video").checked, screen: false });
@@ -263,7 +264,6 @@
         var stream = evt.stream;
         console.log("Subscribe remote stream successfully: " + stream.getId());
         if ($('div#video #agora_remote' + stream.getId()).length === 0) {
-          console.warn('we did find div#video line 237')
           $('div#video').append('<div id="agora_remote' + stream.getId() + '" ></div>');
         }
         stream.play('agora_remote' + stream.getId());
