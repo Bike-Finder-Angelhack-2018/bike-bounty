@@ -18,15 +18,20 @@ html {
 }
 
 #agora_local {
-    height: 70%;
+    height: 100%;
     width: 100%;
    /* float:right;width:210px;height:147px;display:inline-block;  */
 }
 
 .join-leave {
-    margin-top: 10px;l
-}
+    margin-top: 10px;
+};
 
 .btn-primary {
     background-color: #E66A7E;
+};
+
+.video-box{
+    height: 70% !important;
+    margin: 0 auto;
 }
