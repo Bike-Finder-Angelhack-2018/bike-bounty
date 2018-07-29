@@ -40,7 +40,7 @@
         <div class="panel-body">
           <input id="key" type="text" value="4c20c6c4693c4b87a68acce412e161df" size="36"></input>
           <input id="channel" type="text" value="1000" size="4"></input>
-          <input id="video" type="checkbox" checked></input>
+          <input id="videocheckbox" type="checkbox" checked></input>
 
           <button id="publish" class="btn btn-primary" onclick="publish()">Publish</button>
           <button id="unpublish" class="btn btn-primary" onclick="unpublish()">Unpublish</button>
@@ -156,7 +156,7 @@
 
     //Hides both video panel and video checkbox
     $('#video').hide();
-    $('input#video').hide();
+    $('#videocheckbox').hide();
 
     $('.video-box').css('height', '70%');
 
@@ -197,16 +197,13 @@
         console.log("AgoraRTC client initialized");
         client.join(channel_key, channel.value, null, function (uid) {
           console.log("User " + uid + " join channel successfully");
-
-          if (document.getElementById("video").checked) {
+          if ($('#videocheckbox')[0].checked) {
             camera = videoSource.value;
             microphone = audioSource.value;
             localStream = AgoraRTC.createStream({ streamID: uid, audio: true, cameraId: camera, microphoneId: microphone, video: document.getElementById("video").checked, screen: false });
             //localStream = AgoraRTC.createStream({streamID: uid, audio: false, cameraId: camera, microphoneId: microphone, video: false, screen: true, extensionId: 'minllpmhdgpndnkomcoccfekfegnlikg'});
-            if (document.getElementById("video").checked) {
-              localStream.setVideoProfile('720p_3');
+            localStream.setVideoProfile('720p_3');
 
-            }
 
             // The user has granted access to the camera and mic.
             localStream.on("accessAllowed", function () {
@@ -266,6 +263,7 @@
         var stream = evt.stream;
         console.log("Subscribe remote stream successfully: " + stream.getId());
         if ($('div#video #agora_remote' + stream.getId()).length === 0) {
+          console.warn('we did find div#video line 237')
           $('div#video').append('<div id="agora_remote' + stream.getId() + '" ></div>');
         }
         stream.play('agora_remote' + stream.getId());
