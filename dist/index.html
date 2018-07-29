@@ -19,32 +19,34 @@
 
 <body>
   <div class="container">
-    <div class="row">
+    <div class="row justify-content-md-center">
 
       <div id="div_device" class="panel panel-default">
-        <div class="select input-group">
+        <div class="select">
           <label for="audioSource">Audio source: </label>
-          <select id="audioSource" class="custom-select custom-select-lg mb-3"></select>
+          <select id="audioSource" class="custom-select"></select>
         </div>
         <div class="select">
           <label for="videoSource">Video source: </label>
-          <select id="videoSource"></select>
+          <select id="videoSource" class="custom-select"></select>
         </div>
       </div>
     </div>
       
       <div id="div_join" class="panel panel-default">
         <div class="panel-body">
-          Key:
           <input id="key" type="text" value="4c20c6c4693c4b87a68acce412e161df" size="36"></input>
-          Channel:
           <input id="channel" type="text" value="1000" size="4"></input>
-          Host:
           <input id="video" type="checkbox" checked></input>
-          <button id="join" class="btn btn-primary" onclick="join()">Join</button>
-          <button id="leave" class="btn btn-primary" onclick="leave()">Leave</button>
+
           <button id="publish" class="btn btn-primary" onclick="publish()">Publish</button>
           <button id="unpublish" class="btn btn-primary" onclick="unpublish()">Unpublish</button>
+        </div>
+      </div>
+      <div class="row justify-content-md-center">
+        <div class="col-xs-12">
+          <button id="join" class="btn btn-primary" onclick="join()">Join</button>
+          <button id="leave" class="btn btn-primary" onclick="leave()">Leave</button>
         </div>
       </div>
     
@@ -69,6 +71,11 @@
   </div>
 
   <script language="javascript">
+    $('#publish').hide();
+    $('#unpublish').hide();
+    $('#key').hide();
+    $('#channel').hide();
+    $('#video').hide();
 
     if (!AgoraRTC.checkSystemRequirements()) {
       alert("browser is no support webRTC");
