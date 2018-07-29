@@ -14,3 +14,12 @@ html {
     height: 100%;
 }
 
+#agora_local {
+    height: 70%;
+    width: 100%;
+   /* float:right;width:210px;height:147px;display:inline-block;  */
+}
+
+.join-leave {
+    margin-top: 10px
+}
