@@ -1,5 +1,5 @@
 #map {
-    height: 70%;
+    height: 80%;
 }
 
 body {
@@ -13,7 +13,7 @@ html {
 
 }
 
-.container {
+.container-fluid {
     height: 100%;
 }
 
@@ -41,7 +41,7 @@ html {
 };
 
 .video-box{
-    height: 70% !important;
+    height: 80% !important;
     margin: 0 auto;
 }
 
