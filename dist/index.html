@@ -16,7 +16,6 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
     crossorigin="anonymous"></script>
   <script type="text/javascript" src="../node_modules/@google//markerwithlabel/src/markerwithlabel.js"></script>
-
 </head>
 
 <body>
@@ -74,7 +73,10 @@
   </div>
   <script>
     let map;
+    let pos;
     let bikeMarkers = [];
+    let stationMarkers = [];
+
     function initMap() {
         const mapOptions = {
           zoom: 17.5,
@@ -86,7 +88,7 @@
 
         if (navigator.geolocation) {
           navigator.geolocation.getCurrentPosition(function (position) {
-            let pos = {
+            pos = {
               lat: position.coords.latitude,
               lng: position.coords.longitude
             };
@@ -99,11 +101,9 @@
           title: 'User Location'
         });
 
+        addBikes(pos);
         map.setCenter(pos);
         infoWindow.setPosition(pos);
-
-        addBikes(pos);
-        addStations(pos);
       }, function () {
         handleLocationError(true, infoWindow, map.getCenter());
       });
@@ -144,7 +144,7 @@
         bikeMarkers.push(bike_marker);
       })
     }
-
+    // in case of removing markers, pass in bikeSetMap(null);
     function bikesSetMap(map) {
         for (let i = 0; i < bikeMarkers.length; i++) {
           bikeMarkers[i].setMap(map);
@@ -162,7 +162,7 @@
         })
         .then(function (stations) {
           stations.forEach(station => {
-            station_marker = new google.maps.Marker({
+            let station_marker = new google.maps.Marker({
               position: { lat: station.bikeLatitude, lng: station.bikeLongitude },
               icon: stationIcon,
               map: map,
@@ -173,8 +173,15 @@
                 fontWeight: "bold"
               }
             });
+            stationMarkers.push(station_marker);
           })
         });
+    }
+
+    function stationSetMap(map) {
+        for (let i = 0; i < stationMarkers.length; i++) {
+          stationMarkers[i].setMap(map);
+        }
     }
 
     // a function to handle geolocation error
@@ -339,6 +346,8 @@
         $('div#video').hide();
       $('#map').show();
       $('#join').show();
+      bikesSetMap(null);
+      addStations(pos);
       client.leave(function () {
         console.log("Leavel channel successfully");
       }, function (err) {
@@ -380,11 +389,9 @@
         }
       });
     }
-
     //audioSelect.onchange = getDevices;
     //videoSelect.onchange = getDevices;
     getDevices();
   </script>
 </body>
-
 </html>
