@@ -28,10 +28,37 @@ html {
 };
 
 .btn-primary {
-    background-color: #E66A7E;
+    color: #fff !important;
+    background-color: #E66A7E !important;
+    border-color: #E66A7E !important;
+    background: #E66A7E !important;
+};
+
+#button {
+    color: #fff !important;
+    background-color: #E66A7E !important;
+    border-color: #E66A7E !important;
 };
 
 .video-box{
     height: 70% !important;
     margin: 0 auto;
+}
+
+select {
+    background-color: #4C4C4C !important;
+    background: #4C4C4C !important;
+    color: #E66A7E !important;
+    border-color: #E66A7E !important;
+}
+
+option {
+    color: #E66A7E !important;
+}
+
+#join, #leave {
+    color: #fff !important;
+    background-color: #E66A7E !important;
+    border-color: #E66A7E !important;
+    background: #E66A7E !important;
 }
