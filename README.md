@@ -7,9 +7,10 @@ Our app enables bike-sharing companies to distribute rewards for finding and ret
 Users receive rewards for hunting down abandoned bicycles. Upon finding a bike, users initiate a video chat to inform the bike-sharing company of the bike’s location. Using our GPS/map integration, they can return the bike safely to a nearby dock for extra rewards.
 
 ## Prototype
-
-<img src="https://www.dropbox.com/s/smrb9lkabn64oeh/BikeBounty.001.jpeg" width="100" height="100">
-![alt text](https://www.dropbox.com/s/smrb9lkabn64oeh/BikeBounty.001.jpeg)
+![alt text](/images/BikeBounty.001.jpeg)
+![alt text](/images/BikeBounty.001.jpeg)
+![alt text](/images/BikeBounty.006.jpeg)
+![alt text](/images/BikeBounty.007.jpeg)
 ![alt text](https://www.dropbox.com/s/ki5rs1gw62es8hq/BikeBounty.002.jpeg)
 ![](https://www.dropbox.com/s/zqp6ivfsiqm43xy/BikeBounty.006.jpeg?dl=1)
 ![](https://www.dropbox.com/s/g6040zsoalmwrkr/BikeBounty.007.jpeg?dl=1)
