@@ -8,7 +8,7 @@ Users receive rewards for hunting down abandoned bicycles. Upon finding a bike, 
 
 ## Prototype
 
-<img src="https://www.dropbox.com/s/smrb9lkabn64oeh/BikeBounty.001.jpeg?dl=1" width="100" height="100">
+<img src="https://www.dropbox.com/s/smrb9lkabn64oeh/BikeBounty.001.jpeg" width="100" height="100">
 ![alt text](https://www.dropbox.com/s/smrb9lkabn64oeh/BikeBounty.001.jpeg)
 ![alt text](https://www.dropbox.com/s/ki5rs1gw62es8hq/BikeBounty.002.jpeg)
 ![](https://www.dropbox.com/s/zqp6ivfsiqm43xy/BikeBounty.006.jpeg?dl=1)
