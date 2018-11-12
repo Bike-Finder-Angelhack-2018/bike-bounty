@@ -4,47 +4,46 @@ import { Map, Marker, GoogleApiWrapper } from 'google-maps-react';
 
 
 const lambda_key = process.env.REACT_APP_AWS_LAMBDA_API_KEY;
-const marker_array = [
-    {
-        title: 'The marker`s title will appear as a tooltip.',
-        name: 'SOMA' ,
-        position:{ lat: 37.778529, lng: -122.405640 }
-    },
-    {
-        title: 'The marker`s title will appear as a tooltip.',
-        name: 'SOMA',
-        position: { lat: 37.778419, lng: -122.405640 }
-    },
-    {
-        title: 'The marker`s title will appear as a tooltip.',
-        name: 'SOMA',
-        position: { lat: 37.778639, lng: -122.405640 }
-    },
-];
-const markers = marker_array.map((marker)=>{
-    return <Marker title={marker.title} name={marker.name} position={marker.position}></Marker>
-});
 
 export class MapContainer extends Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            isLoaded: false,
+            bikes: [],
+        };
+    }
     componentDidMount(){
         let myHeaders = new Headers();
+        let self = this;
         myHeaders.append('x-api-key', lambda_key);
         fetch('https://dauyyicmya.execute-api.us-east-1.amazonaws.com/default/getLostLimeBikes', {
             headers: myHeaders,
         })
         .then((res)=>{
-            console.log('success,', res)
+            return res.json();
+        })
+        .then(function(res){
+            let bikes = JSON.parse(res.body);
+            self.setState({bikes, isLoaded: true});
         })
         .catch((err)=>{
             console.log('err', err);
         });
     }
     render() {
-        return (
-            <Map google={this.props.google} zoom={14}>
-            {markers}
-            </Map>
-        );
+        const { isLoaded, bikes } = this.state;
+        if (!isLoaded){
+            return <div>Loading...</div>
+        } else {
+            return (
+                <Map google={this.props.google} zoom={14}>
+                {bikes.map((bike)=>{
+                    return <Marker key={bike.id} title={bike.title} name={bike.name} position={bike.position}></Marker>
+                })}
+                </Map>
+            );
+        }
     }
 }
 
