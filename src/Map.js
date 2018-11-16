@@ -39,7 +39,7 @@ export class MapContainer extends Component {
             return (
                 <Map google={this.props.google} zoom={14}>
                 {bikes.map((bike)=>{
-                    return <Marker key={bike.id} title={bike.title} name={bike.name} position={bike.position}></Marker>
+                    return <Marker key={bike.id} title={bike.title} name={bike.name} position={bike.position} icon={{url: 'bike.png'}}></Marker>
                 })}
                 </Map>
             );
