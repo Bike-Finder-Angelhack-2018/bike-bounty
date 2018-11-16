@@ -57,13 +57,14 @@ export class MapContainer extends Component {
             return (
                 <Map google={this.props.google} zoom={14} onClick={this.onMapClicked}>
                 {bikes.map((bike)=>{
-                    return <Marker onClick={this.onMarkerClick} key={bike.id} title={bike.title} name={bike.name} position={bike.position} icon={{url: 'bike.png'}}></Marker>
+                        return <Marker onClick={this.onMarkerClick} key={bike.id} title={`bike_${bike.id}`} name={`bike_${bike.id}`} status={bike.status} position={bike.position} icon={{url: 'bike.png'}}></Marker>
                 })}
                 <InfoWindow
                     marker={this.state.activeMarker}
                     visible={this.state.showingInfoWindow}>
                     <div>
                         <h1>{this.state.selectedPlace.name}</h1>
+                        <h3>Status: {this.state.selectedPlace.status}</h3>
                     </div>
                 </InfoWindow>
                 </Map>
