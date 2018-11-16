@@ -9,6 +9,16 @@ Users receive rewards for hunting down abandoned bicycles. Upon finding a bike, 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Setup Dev Environment
+First, set up api keys by putting them in environment variables. 
+
+**Ubuntu:**
+* Do `sudo -H gedit /etc/environment`
+* Add at the bottom of the file our 3 api keys in the following format: `VARNAME="my value"`
+    * REACT_APP_AWS_LAMBDA_API_KEY
+    * REACT_APP_MAP_API_KEY
+    * REACT_APP_COORD_API_KEY
+
 ## Available Scripts
 
 In the project directory, you can run:
